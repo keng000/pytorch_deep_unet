@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/keng000/deep_unet.svg?branch=master)](https://travis-ci.com/keng000/deep_unet)
+[![Build Status](https://travis-ci.com/keng000/pytorch_deep_unet.svg?branch=master)](https://travis-ci.com/keng000/pytorch_deep_unet)
 
 # deep_unet
 Implementation of deep unet.
