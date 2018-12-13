@@ -11,7 +11,7 @@ jobs:
 
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "pytorch_deep_unet/requirements.txt" }}
+          - v1-dependencies-{{ checksum "requirements.txt" }}
           - v1-dependencies-
 
       - run:
@@ -19,18 +19,18 @@ jobs:
           command: |
             python3 -m venv pytorch_deep_unet
             . pytorch_deep_unet/bin/activate
-            pip install -r pytorch_deep_unet/requirements.txt
+            pip install -r requirements.txt
 
       - save_cache:
           paths:
             - ./pytorch_deep_unet
-          key: v1-dependencies-{{ checksum "pytorch_deep_unet/requirements.txt" }}
+          key: v1-dependencies-{{ checksum "requirements.txt" }}
         
       - run:
           name: run tests
           command: |
             . pytorch_deep_unet/bin/activate
-            python -m unittest discover pytorch_deep_unet/
+            python -m unittest
 
       - store_artifacts:
           path: test-reports
